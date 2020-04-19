@@ -1,0 +1,25 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+autopep8 = "*"
+flake8 = "*"
+
+[packages]
+python-dotenv = "*"
+flask = "*"
+flask-httpauth = "*"
+uuid = "*"
+datetime = "*"
+requests = "*"
+schedule = "*"
+
+[requires]
+python_version = "2.7"
+
+[scripts]
+start = "python app.py"
+format = "autopep8 -ivr ."
+lint = "flake8 --show-source ."

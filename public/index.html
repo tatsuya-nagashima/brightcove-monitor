@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="static/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="static/css/materialize.min.css" />
+    <script src="static/js/materialize.min.js"></script>
+    <script src="static/js/app.js"></script>
+  </head>
+
+  <body>
+    <nav>
+      <h3 class="brand-logoi waves-light">Brightcove Monitoring</h3>
+    </nav>
+
+    <div style="text-align: center;">
+      <p class="chip" id="date" style="font-size: 24pt;"></p>
+      <p class="chip" id="state" style="font-size: 24pt;">now loading...</p>
+    </div>
+
+    <table class="centered" style="font-size: 24pt;">
+      <thead>
+        <tr>
+          <th>Timestamp</th>
+          <th>Concurrent Viewers</th>
+        </tr>
+      </thead>
+
+      <tbody id="tbody"></tbody>
+    </table>
+
+    <div class="row" style="padding-top: 20px; text-align: center;">
+      <div class="col s10">
+        <input type="text" style="text-align: right;" class="datepicker" id="datepicker" placeholder="日付" />
+      </div>
+      <div class="col s2">
+        <button type="button" class="waves-effect waves-light btn" onclick="download_log()">Download</button>
+      </div>
+    </div>
+
+    <script>
+      $(".datepicker").datepicker({
+        autoClose: true,
+        format: "yyyy-mm-dd",
+        i18n: {
+          months: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
+          monthsShort: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
+          weekdays: ["日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"],
+          weekdaysShort: ["日", "月", "火", "水", "木", "金", "土"],
+          weekdaysAbbrev: ["日", "月", "火", "水", "木", "金", "土"],
+          cancel: "キャンセル",
+          close: "閉じる",
+        },
+      });
+    </script>
+  </body>
+</html>
